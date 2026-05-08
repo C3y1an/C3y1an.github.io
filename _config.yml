@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Personal Site
+title: C3y1an
 subtitle: 'Build, write, and share.'
 description: 'A clean personal website powered by Hexo and GitHub Pages.'
 keywords: portfolio, blog, personal site
-author: Your Name
+author: XQxiqi
 language: en
 timezone: Asia/Hong_Kong
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://YOUR_GITHUB_USERNAME.github.io
+url: https://C3y1an.github.io
 permalink: posts/:title/
 permalink_defaults:
 pretty_urls:
