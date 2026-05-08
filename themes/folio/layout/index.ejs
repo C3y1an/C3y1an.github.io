@@ -1,0 +1,51 @@
+<section class="hero">
+  <div class="hero-copy">
+    <h1><%= config.author %></h1>
+    <p><%= config.subtitle %></p>
+    <div class="hero-actions">
+      <a class="button primary" href="<%- url_for('/projects/') %>">View Projects</a>
+      <a class="button" href="<%- url_for('/about/') %>">About Me</a>
+    </div>
+  </div>
+  <div class="hero-card" aria-label="Profile summary">
+    <div class="orbital-mark">
+      <span></span>
+      <span></span>
+      <strong>YN</strong>
+    </div>
+    <p>Personal notes, selected work, and a home base for the things I am building.</p>
+  </div>
+</section>
+
+<section class="section-grid">
+  <article>
+    <span class="section-number">01</span>
+    <h2>Build</h2>
+    <p>Showcase product work, tools, experiments, and open-source contributions with short, scannable project notes.</p>
+  </article>
+  <article>
+    <span class="section-number">02</span>
+    <h2>Write</h2>
+    <p>Publish essays, learning logs, technical notes, and reflections using Hexo posts in Markdown.</p>
+  </article>
+  <article>
+    <span class="section-number">03</span>
+    <h2>Connect</h2>
+    <p>Keep a stable public identity at your GitHub Pages address and update it as your work grows.</p>
+  </article>
+</section>
+
+<section class="latest">
+  <div class="section-heading">
+    <h2>Latest Writing</h2>
+    <a href="<%- url_for('/archives/') %>">All posts</a>
+  </div>
+  <div class="post-list">
+    <% page.posts.sort('-date').limit(3).each(function(post) { %>
+      <a class="post-row" href="<%- url_for(post.path) %>">
+        <span><%= post.title %></span>
+        <time datetime="<%= date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+      </a>
+    <% }) %>
+  </div>
+</section>

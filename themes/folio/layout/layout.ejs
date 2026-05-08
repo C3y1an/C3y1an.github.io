@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="<%= config.language || 'en' %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><% if (page.title) { %><%= page.title %> | <% } %><%= config.title %></title>
+  <meta name="description" content="<%= page.description || config.description || '' %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <%- css('css/style') %>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="<%- url_for('/') %>" aria-label="<%= config.title %> home">
+      <span class="brand-mark">YN</span>
+      <span><%= config.title %></span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <% const nav = theme.nav || {}; Object.keys(nav).forEach(function(label) { %>
+        <a href="<%- url_for(nav[label]) %>"><%= label %></a>
+      <% }) %>
+    </nav>
+  </header>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <%= date(new Date(), 'YYYY') %> <%= config.author %></span>
+    <span>Powered by Hexo and GitHub Pages</span>
+  </footer>
+</body>
+</html>

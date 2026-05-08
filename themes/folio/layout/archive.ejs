@@ -1,0 +1,14 @@
+<article class="content-page">
+  <header>
+    <h1>Writing</h1>
+    <p>Notes, essays, and updates.</p>
+  </header>
+  <div class="post-list archive-list">
+    <% page.posts.sort('-date').each(function(post) { %>
+      <a class="post-row" href="<%- url_for(post.path) %>">
+        <span><%= post.title %></span>
+        <time datetime="<%= date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+      </a>
+    <% }) %>
+  </div>
+</article>
