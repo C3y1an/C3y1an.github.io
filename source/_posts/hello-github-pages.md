@@ -4,6 +4,9 @@ date: 2026-05-08 21:35:00
 tags:
   - Hexo
   - GitHub Pages
+categories:
+  - 网站建设
+cover: /img/butterfly-icon.png
 ---
 
 This is the first post on the site. The project is powered by Hexo, generated as static files, and ready to deploy through GitHub Pages.
